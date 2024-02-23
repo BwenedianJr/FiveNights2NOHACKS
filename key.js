@@ -1,4 +1,4 @@
-const enterButton = document.getElementById('enterButton');
+const enterButton = document.getElementById('ctrlButton');
 
 enterButton.addEventListener('click', () => {
   const event = new KeyboardEvent('keydown', {
