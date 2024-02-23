@@ -1,39 +1,3 @@
-function simulateKeyPress(target, options) {
-    var event = target.ownerDocument.createEvent('KeyEvents'),
-        options = options || {};
-
-    // Set your options or || default values
-    var opts = {
-        type: options.type                  || "keypress",
-        bubbles: options.bubbles            || true,
-        cancelable: options.cancelable      || true,
-        viewArg: options.viewArg            || null,
-        ctrlKeyArg: options.ctrlKeyArg      || true,
-        altKeyArg: options.altKeyArg        || false,
-        shiftKeyArg: options.shiftKeyArg    || false,
-        metaKeyArg: options.metaKeyArg      || false,
-        keyCodeArg: options.keyCodeArg      || 0,
-        charCodeArg: options.charCodeArg    || 0
-    }
-
-    // Pass in the options
-    event.initKeyEvent(
-        opts.type,
-        opts.bubbles,
-        opts.cancelable,
-        opts.viewArg,
-        opts.ctrlKeyArg,
-        opts.altKeyArg,
-        opts.shiftKeyArg,
-        opts.metaKeyArg,
-        opts.keyCodeArg,
-        opts.charCodeArg
-    );
-
-    // Fire the event
-    target.dispatchEvent(event);
-    event.stopPropagation;
-}
 var Aa="function"==typeof Object.defineProperties?Object.defineProperty:function(P,ra,A){if(A.get||A.set)throw new TypeError("ES3 does not support getters and setters.");P!=Array.prototype&&P!=Object.prototype&&(P[ra]=A.value)},Ya="undefined"!=typeof window&&window===this?this:"undefined"!=typeof global&&null!=global?global:this;function mb(){mb=function(){};Ya.Symbol||(Ya.Symbol=nb)}var ob=0;function nb(P){return"jscomp_symbol_"+(P||"")+ob++}
 function se(){mb();var P=Ya.Symbol.iterator;P||(P=Ya.Symbol.iterator=Ya.Symbol("iterator"));"function"!=typeof Array.prototype[P]&&Aa(Array.prototype,P,{configurable:!0,writable:!0,value:function(){return te(this)}});se=function(){}}function te(P){var ra=0;return ue(function(){return ra<P.length?{done:!1,value:P[ra++]}:{done:!0}})}function ue(P){se();P={next:P};P[Ya.Symbol.iterator]=function(){return this};return P}
 function ve(P,ra){se();P instanceof String&&(P+="");var A=0,V={next:function(){if(A<P.length){var Y=A++;return{value:ra(Y,P[Y]),done:!1}}V.next=function(){return{done:!0,value:void 0}};return V.next()}};V[Symbol.iterator]=function(){return V};return V}function we(P,ra){if(ra){for(var A=Ya,V=P.split("."),Y=0;Y<V.length-1;Y++){var N=V[Y];N in A||(A[N]={});A=A[N]}V=V[V.length-1];Y=A[V];N=ra(Y);N!=Y&&null!=N&&Aa(A,V,{configurable:!0,writable:!0,value:N})}}
